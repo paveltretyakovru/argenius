@@ -3,6 +3,8 @@
 /// More dartdocs go here.
 library argenius;
 
+import 'package:argenius/src/argenius_base.dart';
+
 export 'src/argenius_base.dart';
 
-// TODO: Export any libraries intended for clients of this package.
+final Argenius argenius = Argenius();
