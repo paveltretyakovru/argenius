@@ -3,6 +3,7 @@
 RegExp argumentWithName = RegExp(r'^--\s*(.*)');
 RegExp nameWithValueArgument = RegExp(r'^--\s*(.*)=\s*(.*)$');
 
+/// {@category Basics}
 /// Base class [Argenius]
 class Argenius {
   /// List of arguments without names
@@ -10,7 +11,7 @@ class Argenius {
   /// For example, afte parsing next command:
   /// dart_app param1 --param2 value2 --param3=value3
   /// 
-  /// [ordered] will be ['param1']
+  /// [ordered] return list with 'param1'
   final List<String> ordered = [];
 
   /// List of all arguments
@@ -18,7 +19,7 @@ class Argenius {
   /// For example, afte parsing next command:
   /// dart_app param1 --param2 value2 --param3=value3
   /// 
-  /// [arguments] will be ['param1', '--param2', 'value2', '--param3=value3']
+  /// [arguments] return list 'param1', '--param2', 'value2', '--param3=value3'
   final List<String> arguments = [];
 
   /// Map of arguments with values
@@ -26,7 +27,7 @@ class Argenius {
   /// For example, afte parsing next command:
   /// dart_app param1 --param2 value2 --param3=value3
   /// 
-  /// [named] will be {'param2': 'value2', 'param3'='value3'}
+  /// [named] return map with {'param2': 'value2', 'param3'='value3'}
   final Map<String, String> named = {};
 
   Argenius({ List<String> args = const [] }) {
@@ -171,12 +172,12 @@ class Argenius {
   }
 
   /// If [argument] is variable name with value, then return next array:
-  /// [variableName, variableValue] else return empty array ([]).
+  /// "variableName, variableValue" else return empty array.
   /// 
   /// For example:
-  /// getNameWithValue('--argument') // return [], because it's only var name
-  /// getNameWithValue('argument') // return [], because it's only value or dflt
-  /// getNameWithValue('--argument=value') // return ['argument', 'value']
+  /// getNameWithValue('--argument') // return empty list, because it's only var name
+  /// getNameWithValue('argument') // return empty list, because it's only value or dflt
+  /// getNameWithValue('--argument=value') // return list: 'argument', 'value'
   List<String> getNameWithValue(String argument) {
     final match = nameWithValueArgument.firstMatch(argument);
 
