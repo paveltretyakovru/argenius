@@ -1,3 +1,4 @@
+/// Copyright © 2023 Pavel Tretyakov. All rights reserved.
 import 'package:argenius/argenius.dart';
 import 'package:test/test.dart';
 

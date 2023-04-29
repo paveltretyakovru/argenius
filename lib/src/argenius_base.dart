@@ -1,3 +1,5 @@
+/// Copyright © 2023 Pavel Tretyakov. All rights reserved.
+
 RegExp argumentWithName = RegExp(r'^--\s*(.*)');
 RegExp nameWithValueArgument = RegExp(r'^--\s*(.*)=\s*(.*)$');
 
