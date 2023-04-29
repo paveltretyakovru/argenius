@@ -53,6 +53,7 @@ void main() {
 
       test('should create create instance of Argenius', () {
         expect(instanceWithoutArgs, isNotNull);
+        expect(instanceWithoutArgs.arguments, isEmpty);
       });
 
       test('should parse arguments on construct', () {
@@ -65,6 +66,48 @@ void main() {
 
       test('should parse arguments without names', () {
         expect(instance.named, isNotEmpty);
+      });
+    });
+
+    group('parse method', () {
+      test('should parse fullset arguments list', () {
+        Argenius instance = Argenius(args: fullsetArguments);
+
+        expect(instance, isNotNull);
+        expect(instance.arguments, isNotEmpty);
+
+        expect(instance.named, isNotEmpty);
+        expect(instance.ordered, isNotEmpty);
+      });
+
+      test('should parse only named arguments list', () {
+        Argenius instance = Argenius(args: namedArguments);
+
+        expect(instance, isNotNull);
+        expect(instance.arguments, isNotEmpty);
+
+        expect(instance.named, isNotEmpty);
+        expect(instance.ordered, isEmpty);
+      });
+
+      test('should parse only fullnamed (name=value) arguments list', () {
+        Argenius instance = Argenius(args: fullNamedArguments);
+
+        expect(instance, isNotNull);
+        expect(instance.arguments, isNotEmpty);
+
+        expect(instance.named, isNotEmpty);
+        expect(instance.ordered, isEmpty);
+      });
+
+      test('should parse arguments list without names (ordered)', () {
+        Argenius instance = Argenius(args: orderedArguments);
+
+        expect(instance, isNotNull);
+        expect(instance.arguments, isNotEmpty);
+
+        expect(instance.named, isEmpty);
+        expect(instance.ordered, isNotEmpty);
       });
     });
   });
