@@ -1,6 +1,7 @@
 name: argenius
-description: Library for parsing commandline arguments
+description: Library for parsing commandline arguments and using then with global scope or parse string commands on any other time
 version: 1.0.0
+homepage: https://paveltretyakovru.github.io/argenius/
 repository: https://github.com/paveltretyakovru/argenius.git
 
 environment:
