@@ -7,8 +7,54 @@
     <title>Argenius library</title>
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Logo font -->
+    <!-- <script src="https://c.webfontfree.com/c.js?f=ThomasschriftW00-Regular" type="text/javascript"></script> -->
 </head>
 <body>
-    Hello!
+    <main>
+        <section id="home">
+            <div></div>
+            <div id="logo">
+                <img src="./logo.png" alt="Argenius logo" />
+            </div>
+            <div class="mouse"></div>
+        </section>
+
+        <section id="usage">
+            <h1>Usage</h1>
+            <div id="sides">
+                <div class="side">
+                    <img class="gif-demo" src="argenius_demo.gif" alt="Argenius demo" />
+                </div>
+
+                <div class="side">
+                    <p>Add library to project:</p>
+                    <pre>dart pub add argenius</pre>
+
+                    <p>Parse arguments with global argenius instance:</p>
+                    <pre>
+import 'package:argenius/argenius.dart';
+
+void main(List<String> args) {
+  argenius.parse(args);
+
+  print('Named arguments: ${argenius.named}');
+  print('Ordered arguments: ${argenius.ordered}');
+}</pre>
+
+                    <p>Run application with arguments:</p>
+                    <pre>dart example/gif_demo.dart argument1 --argumentWithValue1=value1 argumentClear --argumentWithValue2 value2 clearArgumentThree</pre>
+
+                    <p>... and you can start working with collected arguments</p>
+                    <pre>
+Named arguments: {argumentWithValue1: value1, argumentWithValue2: value2}
+Ordered arguments: [argument1, argumentClear, clearArgumentThree]</pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

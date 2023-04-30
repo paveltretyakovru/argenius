@@ -13,6 +13,8 @@ and the Flutter guide for
 
 Library for parsing commandline arguments
 
+![Argenius demo gif image](doc/web/argenius_demo.gif)
+
 ## Features
 
 Current release support arguments with next template:
@@ -35,7 +37,7 @@ To start using the library you should only add library to your project
 ```bash
 flutter pub add argenius
 # or
-dart add argenius
+dart pub add argenius
 ```
 
 ## Usage
