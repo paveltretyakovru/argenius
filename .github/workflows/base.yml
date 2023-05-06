@@ -1,0 +1,17 @@
+# Copyright © 2023 Pavel Tretyakov. All rights reserved.
+
+name: base
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3
+      - uses: dart-lang/setup-dart@1
+      
+      - run: dart pub get
+      - run: dart format -- output=none --set-exit-if-changed .
+      - run: dart analyze
+      - run: dart test
