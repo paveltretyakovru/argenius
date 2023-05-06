@@ -49,10 +49,15 @@ h1 {
   font-family: 'ThomasschriftW00-Regular', cursive;
 }
 
+#logo img {
+  width: 100%;
+}
+
 /* ~~~~~~ Usage ~~~~~ */
 #usage {
-  width: 100vw;
-  height: 100vh;
+  width: calc(100vw - 40px);
+  padding: 20px;
+  min-height: 100vh;
   background-color: var(--black);
 
   display: flex;
@@ -84,6 +89,19 @@ h1 {
 
 .side__code {
   width: 40%;
+}
+
+/* ============================= MEDIA QUERIES ===============================*/
+@media only screen and (max-width: 600px) {
+  #sides {
+    flex-direction: column;
+  }
+
+  .side {
+    padding: 0;
+    /* width: calc(100% - 66px); */
+    width: 100%;
+  }
 }
 
 /* ============================= SPECIAL ELEMENTS ============================*/
@@ -149,7 +167,11 @@ pre::-webkit-scrollbar-thumb:active {
 }
 
 
-
+@media only screen and (max-width: 600px) {
+  pre {
+    width: calc(100% - 26px);
+  }
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~ Scroll image with animation ~~~~~~~~~~~~~~~~~~~~~ */
 .mouse {
