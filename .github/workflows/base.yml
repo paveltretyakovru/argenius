@@ -12,16 +12,16 @@ jobs:
       - uses: dart-lang/setup-dart@v1
       
       - name: Install dependencies
-      - run: dart pub get
+        run: dart pub get
       
       - name: Format documents with dart foramt
-      - run: dart format -- output=none --set-exit-if-changed .
+        run: dart format -- output=none --set-exit-if-changed .
       
       - name: Analyze application to issues
-      - run: dart analyze
+        run: dart analyze
       
       - name: Run tests
-      - run: dart test
+        run: dart test
   
   deploy-card:
     name: Deploy web card
