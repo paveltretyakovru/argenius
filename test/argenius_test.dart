@@ -111,5 +111,14 @@ void main() {
         expect(instance.ordered, isNotEmpty);
       });
     });
+
+    group('stringToList', () {
+      test('should return list arguments', () {
+        final List<String> result = Argenius.stringToList('dart run hello --world Name');
+        final List<String> need = ['dart', 'run', 'hello', '--world', 'Name'];
+
+        expect(result.join(',') == need.join(','), isTrue);
+      });
+    });
   });
 }

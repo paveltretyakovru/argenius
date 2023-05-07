@@ -154,9 +154,16 @@ class Argenius {
   /// If it's not imposible to parse string then return **null**
   /// 
   /// For example:
-  /// getName('--argument') // return 'argument'
-  /// getName('argument') // return null, becouse it's value or deafult arg
-  /// getName('--argument=value') // return null, becouse it's not only name
+  /// ```dart
+  /// getName('--argument');
+  /// // return 'argument'
+  /// 
+  /// getName('argument');
+  /// // return null, becouse it's value or deafult arg
+  /// 
+  /// getName('--argument=value');
+  /// // return null, becouse it's not only name
+  /// ```
   String? getName(String argument) {
     final match = argumentWithName.firstMatch(argument);
 
@@ -175,9 +182,16 @@ class Argenius {
   /// "variableName, variableValue" else return empty array.
   /// 
   /// For example:
-  /// getNameWithValue('--argument') // return empty list, because it's only var name
-  /// getNameWithValue('argument') // return empty list, because it's only value or dflt
-  /// getNameWithValue('--argument=value') // return list: 'argument', 'value'
+  /// ```
+  /// getNameWithValue('--argument')
+  /// // return empty list, because it's only var name
+  /// 
+  /// getNameWithValue('argument')
+  /// // return empty list, because it's only value or dflt
+  /// 
+  /// getNameWithValue('--argument=value')
+  /// // return list: ['argument', 'value']
+  /// ```
   List<String> getNameWithValue(String argument) {
     final match = nameWithValueArgument.firstMatch(argument);
 
@@ -196,4 +210,19 @@ class Argenius {
 
     return [];
   }
-} 
+
+  /// [stringToList] parsing [toParse] string to arguments list
+  /// 
+  /// For example:
+  /// ```dart
+  /// Argenius.stringToList('dart run hello --world Name')
+  /// ```
+  /// 
+  /// It returns:
+  /// ```
+  /// ['dart', 'run', 'hello', '--world', 'Name']
+  /// ```
+  static List<String> stringToList(String toParse) {
+    return toParse.split(' ');
+  }
+}
