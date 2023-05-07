@@ -71,10 +71,16 @@
   <p>If <code>argument</code> is name of variable, then return <strong>clear name</strong> without
 specific head symbols (f.e. '--', '-').
 If it's not imposible to parse string then return <strong>null</strong></p>
-<p>For example:
-getName('--argument') // return 'argument'
-getName('argument') // return null, becouse it's value or deafult arg
-getName('--argument=value') // return null, becouse it's not only name</p>
+<p>For example:</p>
+<pre class="language-dart"><code class="language-dart">getName('--argument');
+// return 'argument'
+
+getName('argument');
+// return null, becouse it's value or deafult arg
+
+getName('--argument=value');
+// return null, becouse it's not only name
+</code></pre>
 </section>
 
 
@@ -144,6 +150,8 @@ getName('--argument=value') // return null, becouse it's not only name</p>
 
 
 
+        <li class="section-title"><a href="../../argenius/Argenius-class.html#static-methods">Static methods</a></li>
+          <li><a href="../../argenius/Argenius/stringToList.html">stringToList</a></li>
 
 </ol>
 
@@ -157,7 +165,7 @@ getName('--argument=value') // return null, becouse it's not only name</p>
 <footer>
   <span class="no-break">
     argenius
-      1.0.0
+      1.1.1
   </span>
 
   

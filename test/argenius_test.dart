@@ -4,7 +4,8 @@ import 'package:test/test.dart';
 
 const List<String> fullsetArguments = [
   'param1',
-  '--name1', 'valueName1',
+  '--name1',
+  'valueName1',
   'param2',
   '--name2=valueName2'
 ];
@@ -12,8 +13,10 @@ const List<String> fullsetArguments = [
 const List<String> orderedArguments = ['param1', 'param2'];
 
 const List<String> namedArguments = [
-  '--name1', 'valueName1',
-  '--name2', 'valueName2'
+  '--name1',
+  'valueName1',
+  '--name2',
+  'valueName2'
 ];
 
 const List<String> fullNamedArguments = [
@@ -114,7 +117,8 @@ void main() {
 
     group('stringToList', () {
       test('should return list arguments', () {
-        final List<String> result = Argenius.stringToList('dart run hello --world Name');
+        final List<String> result =
+            Argenius.stringToList('dart run hello --world Name');
         final List<String> need = ['dart', 'run', 'hello', '--world', 'Name'];
 
         expect(result.join(',') == need.join(','), isTrue);

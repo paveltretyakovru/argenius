@@ -70,10 +70,16 @@
 <section class="desc markdown">
   <p>If <code>argument</code> is variable name with value, then return next array:
 "variableName, variableValue" else return empty array.</p>
-<p>For example:
-getNameWithValue('--argument') // return empty list, because it's only var name
-getNameWithValue('argument') // return empty list, because it's only value or dflt
-getNameWithValue('--argument=value') // return list: 'argument', 'value'</p>
+<p>For example:</p>
+<pre class="language-dart"><code>getNameWithValue('--argument')
+// return empty list, because it's only var name
+
+getNameWithValue('argument')
+// return empty list, because it's only value or dflt
+
+getNameWithValue('--argument=value')
+// return list: ['argument', 'value']
+</code></pre>
 </section>
 
 
@@ -148,6 +154,8 @@ getNameWithValue('--argument=value') // return list: 'argument', 'value'</p>
 
 
 
+        <li class="section-title"><a href="../../argenius/Argenius-class.html#static-methods">Static methods</a></li>
+          <li><a href="../../argenius/Argenius/stringToList.html">stringToList</a></li>
 
 </ol>
 
@@ -161,7 +169,7 @@ getNameWithValue('--argument=value') // return list: 'argument', 'value'</p>
 <footer>
   <span class="no-break">
     argenius
-      1.0.0
+      1.1.1
   </span>
 
   
